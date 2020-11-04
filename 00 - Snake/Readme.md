@@ -1,9 +1,9 @@
 
 #**Author: Victor Kolis Ford**
 
-##Version: 1.0.0
+## Version: 1.0.0
 
-####Game name: Snake
+#### Game name: Snake
 
 **Rules:**
 1. __Try to catch as many apples as possible in order to score the highest;__
