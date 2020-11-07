@@ -42,10 +42,10 @@ public class TicTacToe implements ActionListener{
 			buttons[i].setFont(new Font("Universidad", Font.BOLD, 110));
 			buttons[i].setFocusable(false);
 			buttons[i].addActionListener(this);
+			buttons[i].setBackground(Color.white);
 		}
 
 		button_panel.setLayout(new GridLayout(3,3));
-		button_panel.setBackground(new Color(10,10,250));
 
 		title_panel.add(textfield);
 		frame.add(title_panel, BorderLayout.NORTH);
@@ -151,58 +151,79 @@ public class TicTacToe implements ActionListener{
 
 		// Y conditions
 		// Horizontal
-		if(buttons[0].getText().equals(xSignature) && 
-				buttons[1].getText().equals(xSignature) && 
-				buttons[2].getText().equals(xSignature)){
-			xWins(0, 1, 2);
+		if(buttons[0].getText().equals(oSignature) && 
+				buttons[1].getText().equals(oSignature) && 
+				buttons[2].getText().equals(oSignature)){
+			oWins(0, 1, 2);
 
-		} else if(buttons[3].getText().equals(xSignature) && 
-				buttons[4].getText().equals(xSignature) && 
-				buttons[5].getText().equals(xSignature)){
-			xWins(3, 4, 5);
+		} else if(buttons[3].getText().equals(oSignature) && 
+				buttons[4].getText().equals(oSignature) && 
+				buttons[5].getText().equals(oSignature)){
+			oWins(3, 4, 5);
 
-		} else if(buttons[6].getText().equals(xSignature) && 
-				buttons[7].getText().equals(xSignature) && 
-				buttons[8].getText().equals(xSignature)){
-			xWins(6, 7, 8);
+		} else if(buttons[6].getText().equals(oSignature) && 
+				buttons[7].getText().equals(oSignature) && 
+				buttons[8].getText().equals(oSignature)){
+			oWins(6, 7, 8);
 
 			// Vertical
 
-		} else if(buttons[0].getText().equals(xSignature) && 
-				buttons[3].getText().equals(xSignature) && 
-				buttons[6].getText().equals(xSignature)){
-			xWins(0, 3, 6);
+		} else if(buttons[0].getText().equals(oSignature) && 
+				buttons[3].getText().equals(oSignature) && 
+				buttons[6].getText().equals(oSignature)){
+			oWins(0, 3, 6);
 
-		} else if(buttons[1].getText().equals(xSignature) && 
-				buttons[4].getText().equals(xSignature) && 
-				buttons[7].getText().equals(xSignature)){
-			xWins(1, 4, 7);
+		} else if(buttons[1].getText().equals(oSignature) && 
+				buttons[4].getText().equals(oSignature) && 
+				buttons[7].getText().equals(oSignature)){
+			oWins(1, 4, 7);
 
-		} else if(buttons[2].getText().equals(xSignature) && 
-				buttons[5].getText().equals(xSignature) && 
-				buttons[8].getText().equals(xSignature)){
-			xWins(2, 5, 8);
+		} else if(buttons[2].getText().equals(oSignature) && 
+				buttons[5].getText().equals(oSignature) && 
+				buttons[8].getText().equals(oSignature)){
+			oWins(2, 5, 8);
 
 			// Diagonal 
 
-		} else if(buttons[0].getText().equals(xSignature) && 
-				buttons[4].getText().equals(xSignature) && 
-				buttons[8].getText().equals(xSignature)){
-			xWins(0, 4, 8);
+		} if(buttons[0].getText().equals(oSignature) && 
+				buttons[4].getText().equals(oSignature) && 
+				buttons[8].getText().equals(oSignature)){
+			oWins(0, 4, 8);
 
-		} else if(buttons[2].getText().equals(xSignature) && 
-				buttons[4].getText().equals(xSignature) && 
-				buttons[6].getText().equals(xSignature)){
-			xWins(2, 4, 6);
+		} else if(buttons[2].getText().equals(oSignature) && 
+				buttons[4].getText().equals(oSignature) && 
+				buttons[6].getText().equals(oSignature)){
+			oWins(2, 4, 6);
 
 		}
 	}
-
+	
 	public void xWins(int a, int b, int c) {
-
+		
+				
+		for(int i = 0; i < 9; i++) {
+			buttons[i].setEnabled(false);
+		}
+		
+		textfield.setText(String.format("%s Wins!", this.xSignature));
+		buttons[a].setBackground(Color.green);
+		buttons[b].setBackground(Color.green);
+		buttons[c].setBackground(Color.green);
+		
 	}
 
 	public void oWins(int a, int b, int c) {
-
+		
+		
+		
+		for(int i = 0; i < 9; i++) {
+			buttons[i].setEnabled(false);
+		}
+		textfield.setText(String.format("%s Wins!", this.oSignature));
+		buttons[a].setBackground(Color.green);
+		buttons[b].setBackground(Color.green);
+		buttons[c].setBackground(Color.green);
+		
 	}
+
 }
