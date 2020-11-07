@@ -2,7 +2,7 @@
 
 ## Version: 1.0.0
 
-#### Game name: Snake
+#### Game name: Tic-tac-toe
 
 **Rules:**
 1. Players take turns to play;
