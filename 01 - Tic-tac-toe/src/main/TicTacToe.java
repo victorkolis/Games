@@ -65,6 +65,7 @@ public class TicTacToe implements ActionListener{
 						buttons[i].setText(this.xSignature);
 						player1_turn = false;
 						textfield.setText(this.oSignature);
+						winnerChecker();
 					}
 				} else {
 					if(buttons[i].getText() == "") {
@@ -72,6 +73,7 @@ public class TicTacToe implements ActionListener{
 						buttons[i].setText(this.oSignature);
 						player1_turn = true;
 						textfield.setText(this.xSignature);
+						winnerChecker();
 					}
 				}
 			}
@@ -99,7 +101,101 @@ public class TicTacToe implements ActionListener{
 	}
 
 	public void winnerChecker() {
+		// X conditions
+		// Horizontal
+		if(buttons[0].getText().equals(xSignature) && 
+				buttons[1].getText().equals(xSignature) && 
+				buttons[2].getText().equals(xSignature)){
+			xWins(0, 1, 2);
 
+		} else if(buttons[3].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[5].getText().equals(xSignature)){
+			xWins(3, 4, 5);
+
+		} else if(buttons[6].getText().equals(xSignature) && 
+				buttons[7].getText().equals(xSignature) && 
+				buttons[8].getText().equals(xSignature)){
+			xWins(6, 7, 8);
+
+			// Vertical
+
+		} else if(buttons[0].getText().equals(xSignature) && 
+				buttons[3].getText().equals(xSignature) && 
+				buttons[6].getText().equals(xSignature)){
+			xWins(0, 3, 6);
+
+		} else if(buttons[1].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[7].getText().equals(xSignature)){
+			xWins(1, 4, 7);
+
+		} else if(buttons[2].getText().equals(xSignature) && 
+				buttons[5].getText().equals(xSignature) && 
+				buttons[8].getText().equals(xSignature)){
+			xWins(2, 5, 8);
+
+			// Diagonal 
+
+		} else if(buttons[0].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[8].getText().equals(xSignature)){
+			xWins(0, 4, 8);
+
+		} else if(buttons[2].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[6].getText().equals(xSignature)){
+			xWins(2, 4, 6);
+
+		}
+
+		// Y conditions
+		// Horizontal
+		if(buttons[0].getText().equals(xSignature) && 
+				buttons[1].getText().equals(xSignature) && 
+				buttons[2].getText().equals(xSignature)){
+			xWins(0, 1, 2);
+
+		} else if(buttons[3].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[5].getText().equals(xSignature)){
+			xWins(3, 4, 5);
+
+		} else if(buttons[6].getText().equals(xSignature) && 
+				buttons[7].getText().equals(xSignature) && 
+				buttons[8].getText().equals(xSignature)){
+			xWins(6, 7, 8);
+
+			// Vertical
+
+		} else if(buttons[0].getText().equals(xSignature) && 
+				buttons[3].getText().equals(xSignature) && 
+				buttons[6].getText().equals(xSignature)){
+			xWins(0, 3, 6);
+
+		} else if(buttons[1].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[7].getText().equals(xSignature)){
+			xWins(1, 4, 7);
+
+		} else if(buttons[2].getText().equals(xSignature) && 
+				buttons[5].getText().equals(xSignature) && 
+				buttons[8].getText().equals(xSignature)){
+			xWins(2, 5, 8);
+
+			// Diagonal 
+
+		} else if(buttons[0].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[8].getText().equals(xSignature)){
+			xWins(0, 4, 8);
+
+		} else if(buttons[2].getText().equals(xSignature) && 
+				buttons[4].getText().equals(xSignature) && 
+				buttons[6].getText().equals(xSignature)){
+			xWins(2, 4, 6);
+
+		}
 	}
 
 	public void xWins(int a, int b, int c) {
