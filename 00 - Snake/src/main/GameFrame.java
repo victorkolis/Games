@@ -23,8 +23,5 @@ public class GameFrame extends JFrame{
 		this.setLocationRelativeTo(null); // Makes the window show up in the middle of the screen
 		
 	}
-	
-	public String toString() {
-		return "Game started!";
-	}
+
 }
